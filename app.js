@@ -8,6 +8,16 @@ const btns = document.querySelectorAll('.btn');
 
 btns.forEach(function(btn){
    btn.addEventListener('click', function(e){
-      console.log(e.currentTarget.classList)
+      const styles = e.currentTarget.classList;
+      if (styles.contains('decrease')){
+         count--;
+      }
+      if (styles.contains('reset')){
+         count = 0;
+      }
+      if (styles.contains('increase')){
+         count++;
+      }
+      value.textContent = count;
    });
 });
